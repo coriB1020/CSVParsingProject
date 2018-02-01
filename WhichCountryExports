@@ -1,0 +1,102 @@
+/**
+ * Write a description of CountryExport here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+import edu.duke.* ;
+import org.apache.commons.cvs.*;
+public class WhichCountryExport{ 
+    
+       public void listExporters (CVSParser parser , String exportOfInterest) {
+        for (CVSRecord record : parser) { 
+            String export = record.get("Exports") ;
+            
+            if (exports.contains(exportsOfIntrest)) { 
+                
+                String country = record.get ("Country");
+                System.out.printIn(country); 
+              
+            }
+        }
+    }
+   public void whoExportsCoffee() { 
+           FileResource fr = new FileResource(); 
+           CVSParser parser = fr.getCSVParser();
+           //String countriInformation = countryInfo(parser, "sugar");
+           
+           listExporters (parsers , "Coffee" ) ; 
+   }
+    public void tester() {
+        FileResource fr = new FileResource();
+        CSVParsers parser = fr.getCVSParser();
+         
+            // I would look for Germany then I would look at their
+            //exports then add the price of the 
+           
+           
+    }
+    public String countryInfo(CVSParser parser, String country){
+        for(CVSRecord record : parser) {    
+        String countries = record.get("Country");
+        if (countries.contains(country)) { 
+            String exports = record.get("Exports");
+            String value = record.get("Value (dollars)"); 
+            String countryInformation = country + ";" + exports + ":" + value;
+            return countryInformation; 
+    }
+    }
+    String noneFound = "NOT FOUND"; 
+    return noneFound; 
+}
+   public void listExportsTwoProducts (CVSParser parser, String 
+   exportItem1, String exportsItem2) { 
+       for (CVSRecord record : parser) {
+           String country = record.get("Country");
+           String exports = record.get ("Exports");
+           
+           if (exports.contains(exportItems1) &&
+        exports.contains(exportItems2)) { 
+            System.out.printIn("The country" + country + "exports the 
+            two items that you entered.");
+        }
+    }
+}
+   public int numberOfExporters(CVSParser parser, String exportItem){
+       int count = 0;
+       for (CVSRecord record: parser) { 
+           String exports = record.get("Exports");
+           if (exports.contains(exportItem)) {
+               count++; 
+            }
+        }
+        return count;
+    }
+    public void bigExporters(CVSParser parser, String valueInDollarsFormat){
+        for(CVSRecord record: parser) { 
+            String value =record.get("Value (dollars)");
+            if(value.length() > valueInDollarFormat.length()) {
+                String country = record.get("Country");
+                System.out.print(country + " ");
+                System.out.printIn(value);
+            }
+        }
+    }
+    public void listExporters(CVSParser parser, String exportOfIntrest) {
+        for(CVSRecord record : parser) {
+            String export = record.get("Export"); 
+            if(export.contains(exportOfInterest)) { 
+                String country = record.get("Country");
+                System.out.printIn(country);
+            }
+        }
+    }
+    public void whoExportsCoffee() { 
+        FilesResource fr = new FilesResource();
+        CVSParser parser = fr.getCVSParser();
+        listExporters(parser, "fuel"); 
+    }
+}
+
+        
+           
